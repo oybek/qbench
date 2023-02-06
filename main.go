@@ -11,19 +11,18 @@ func main() {
 	queenNum := 15
 	if len(os.Args) == 2 {
 		switch os.Args[1] {
-		case "single":
+		case "single", "multi":
+			parn := 1
+			if os.Args[1] == "multi" {
+				parn = runtime.NumCPU()
+			}
 			start := time.Now()
-			backtrack([]queen{}, queenNum, 1)
+			backtrack([]queen{}, queenNum, parn)
 			elapsed := time.Since(start)
 			fmt.Println(elapsed.Microseconds())
-		case "multi":
-			start := time.Now()
-			backtrack([]queen{}, queenNum, runtime.NumCPU())
-			elapsed := time.Since(start)
-			fmt.Println(elapsed.Microseconds())
+			os.Exit(0)
 		}
-	} else {
-		fmt.Printf("Usage: %v single|multi\n", os.Args[0])
-		os.Exit(1)
 	}
+	fmt.Printf("Usage: %v single|multi\n", os.Args[0])
+	os.Exit(1)
 }
