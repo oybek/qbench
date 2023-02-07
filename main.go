@@ -3,7 +3,9 @@ package main
 import (
 	"fmt"
 	"os"
+	"os/exec"
 	"runtime"
+	"strings"
 	"time"
 )
 
@@ -19,7 +21,13 @@ func main() {
 			start := time.Now()
 			backtrack([]queen{}, queenNum, parn)
 			elapsed := time.Since(start)
-			fmt.Println(elapsed.Microseconds())
+			modelName, err := exec.Command("bash", "-c", "lscpu | grep 'Model name'").Output()
+			info := strings.Split(string(modelName), ":")
+			if err != nil || len(info) != 2 {
+				fmt.Printf("Can't detect CPU model name %v\n", err)
+				os.Exit(1)
+			}
+			fmt.Printf("|%v|%v|\n", strings.Trim(info[1], " \n"), elapsed.Microseconds())
 			os.Exit(0)
 		}
 	}
