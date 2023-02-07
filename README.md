@@ -21,9 +21,11 @@ Just append the output of your benchmark run to the tables below
 |CPU|Time|
 |-|-|
 |31245751|12th Gen Intel(R) Core(TM) i3-12100|
+|50813733|Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz|
 
 ## Multi Core
 |CPU|Time|
 |-|-|
 |7933973|12th Gen Intel(R) Core(TM) i3-12100|
+|15132679|Intel(R) Core(TM) i5-10300H CPU @ 2.50GHz|
 
