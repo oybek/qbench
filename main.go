@@ -27,7 +27,7 @@ func main() {
 				fmt.Printf("Can't detect CPU model name %v\n", err)
 				os.Exit(1)
 			}
-			fmt.Printf("|%v|%v|\n", strings.Trim(info[1], " \n"), elapsed.Microseconds())
+			fmt.Printf("|%v|%v|\n", elapsed.Microseconds(), strings.Trim(info[1], " \n"))
 			os.Exit(0)
 		}
 	}

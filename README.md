@@ -15,9 +15,15 @@ go run . multi
 
 ## Bring PR with your CPU result
 
-Just append the output of your benchmark run to the table below
+Just append the output of your benchmark run to the tables below
 
+## Single Core
 |CPU|Time|
 |-|-|
-|12th Gen Intel(R) Core(TM) i3-12100|7933973|
+|31245751|12th Gen Intel(R) Core(TM) i3-12100|
+
+## Multi Core
+|CPU|Time|
+|-|-|
+|7933973|12th Gen Intel(R) Core(TM) i3-12100|
 
